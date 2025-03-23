@@ -157,36 +157,6 @@
                     "PHI"
                 ],
                 [
-                    201569,
-                    "Eric",
-                    "Gordon",
-                    "23  ",
-                    1610612755,
-                    "Philadelphia",
-                    "76ers",
-                    "PHI"
-                ],
-                [
-                    203954,
-                    "Joel",
-                    "Embiid",
-                    "21  ",
-                    1610612755,
-                    "Philadelphia",
-                    "76ers",
-                    "PHI"
-                ],
-                [
-                    1642272,
-                    "Jared",
-                    "McCain",
-                    "20  ",
-                    1610612755,
-                    "Philadelphia",
-                    "76ers",
-                    "PHI"
-                ],
-                [
                     1630288,
                     "Jeff",
                     "Dowtin Jr.",
@@ -207,6 +177,16 @@
                     "PHI"
                 ],
                 [
+                    203954,
+                    "Joel",
+                    "Embiid",
+                    "21  ",
+                    1610612755,
+                    "Philadelphia",
+                    "76ers",
+                    "PHI"
+                ],
+                [
                     200768,
                     "Kyle",
                     "Lowry",
@@ -217,44 +197,24 @@
                     "PHI"
                 ],
                 [
-                    1641705,
-                    "Victor",
-                    "Wembanyama",
-                    "1   ",
-                    1610612759,
-                    "San Antonio",
-                    "Spurs",
-                    "SAS"
+                    201569,
+                    "Eric",
+                    "Gordon",
+                    "23  ",
+                    1610612755,
+                    "Philadelphia",
+                    "76ers",
+                    "PHI"
                 ],
                 [
-                    1631127,
-                    "Harrison",
-                    "Ingram",
-                    "55  ",
-                    1610612759,
-                    "San Antonio",
-                    "Spurs",
-                    "SAS"
-                ],
-                [
-                    1629646,
-                    "Charles",
-                    "Bassey",
-                    "28  ",
-                    1610612759,
-                    "San Antonio",
-                    "Spurs",
-                    "SAS"
-                ],
-                [
-                    1642434,
-                    "Riley",
-                    "Minix",
-                    "27  ",
-                    1610612759,
-                    "San Antonio",
-                    "Spurs",
-                    "SAS"
+                    1642272,
+                    "Jared",
+                    "McCain",
+                    "20  ",
+                    1610612755,
+                    "Philadelphia",
+                    "76ers",
+                    "PHI"
                 ],
                 [
                     1630561,
@@ -271,6 +231,46 @@
                     "De'Aaron",
                     "Fox",
                     "4   ",
+                    1610612759,
+                    "San Antonio",
+                    "Spurs",
+                    "SAS"
+                ],
+                [
+                    1642434,
+                    "Riley",
+                    "Minix",
+                    "27  ",
+                    1610612759,
+                    "San Antonio",
+                    "Spurs",
+                    "SAS"
+                ],
+                [
+                    1641705,
+                    "Victor",
+                    "Wembanyama",
+                    "1   ",
+                    1610612759,
+                    "San Antonio",
+                    "Spurs",
+                    "SAS"
+                ],
+                [
+                    1629646,
+                    "Charles",
+                    "Bassey",
+                    "28  ",
+                    1610612759,
+                    "San Antonio",
+                    "Spurs",
+                    "SAS"
+                ],
+                [
+                    1631127,
+                    "Harrison",
+                    "Ingram",
+                    "55  ",
                     1610612759,
                     "San Antonio",
                     "Spurs",

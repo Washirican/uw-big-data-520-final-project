@@ -64,7 +64,7 @@ def main():
         data = get_game_play_by_play(game_id)
 
         if data:
-            save_data_to_file(data, f"game_play_by_play_data_{game_id}.json")
+            save_data_to_file(data, f"./game-play-by-play-data/game_play_by_play_data_{game_id}.json")
             print("Data saved successfully.")
         else:
             print("No data to save.")

@@ -147,10 +147,10 @@
                     "DEN"
                 ],
                 [
-                    1641725,
-                    "Trey",
-                    "Alexander",
-                    "23  ",
+                    1641747,
+                    "DaRon",
+                    "Holmes II",
+                    "14  ",
                     1610612743,
                     "Denver",
                     "Nuggets",
@@ -167,24 +167,14 @@
                     "DEN"
                 ],
                 [
-                    1641747,
-                    "DaRon",
-                    "Holmes II",
-                    "14  ",
+                    1641725,
+                    "Trey",
+                    "Alexander",
+                    "23  ",
                     1610612743,
                     "Denver",
                     "Nuggets",
                     "DEN"
-                ],
-                [
-                    1631133,
-                    "Jabari",
-                    "Walker",
-                    "34  ",
-                    1610612757,
-                    "Portland",
-                    "Trail Blazers",
-                    "POR"
                 ],
                 [
                     1631321,
@@ -201,6 +191,16 @@
                     "Robert",
                     "Williams III",
                     "35  ",
+                    1610612757,
+                    "Portland",
+                    "Trail Blazers",
+                    "POR"
+                ],
+                [
+                    1631133,
+                    "Jabari",
+                    "Walker",
+                    "34  ",
                     1610612757,
                     "Portland",
                     "Trail Blazers",
