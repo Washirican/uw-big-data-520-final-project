@@ -58,16 +58,12 @@ def main():
     Example:
         game_id = "0022401014"  # Replace with actual game ID
     """
-<<<<<<< HEAD
-=======
-    # game_id = "0022401014"  # Example game ID, replace with actual game ID
->>>>>>> 603d98100b0a26dc369f48175e8d73254ee9ebaa
 
     for idx, game_id in enumerate(GAME_IDs):
         data = get_game_play_by_play(game_id)
 
         if data:
-            save_data_to_file(data, f"./game-play-by-play-data/game_play_by_play_data_{game_id}.json")
+            save_data_to_file(data, f"./play-by-play-data/play_by_play_data_{game_id}.json")
             print("Data saved successfully.")
         else:
             print("No data to save.")

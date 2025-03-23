@@ -63,13 +63,12 @@ def main():
     Returns:
         None
     """
-    # game_id = "0022401014"  # Example game ID, replace with actual game ID
 
     for idx, game_id in enumerate(GAME_IDs):
         data = get_game_box_score(game_id)
 
         if data:
-            save_data_to_file(data, f"./game-box-scores/get_game_box_score_data_{game_id}.json")
+            save_data_to_file(data, f"./box-score-data/box_score_data_{game_id}.json")
             print("Data saved successfully.")
         else:
             print("No data to save.")
