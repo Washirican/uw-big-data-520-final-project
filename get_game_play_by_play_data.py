@@ -58,6 +58,10 @@ def main():
     Example:
         game_id = "0022401014"  # Replace with actual game ID
     """
+<<<<<<< HEAD
+=======
+    # game_id = "0022401014"  # Example game ID, replace with actual game ID
+>>>>>>> 603d98100b0a26dc369f48175e8d73254ee9ebaa
 
     for idx, game_id in enumerate(GAME_IDs):
         data = get_game_play_by_play(game_id)

@@ -7,7 +7,10 @@ comm==0.2.2
 debugpy==1.8.13
 decorator==5.2.1
 executing==2.2.0
+<<<<<<< HEAD
 Faker==37.0.2
+=======
+>>>>>>> 603d98100b0a26dc369f48175e8d73254ee9ebaa
 idna==3.10
 ipykernel==6.29.5
 ipython==9.0.2
@@ -15,7 +18,10 @@ ipython_pygments_lexers==1.1.1
 jedi==0.19.2
 jupyter_client==8.6.3
 jupyter_core==5.7.2
+<<<<<<< HEAD
 kafka-python==2.1.2
+=======
+>>>>>>> 603d98100b0a26dc369f48175e8d73254ee9ebaa
 matplotlib-inline==0.1.7
 nest-asyncio==1.6.0
 packaging==24.2
@@ -35,6 +41,9 @@ stack-data==0.6.3
 tornado==6.4.2
 traitlets==5.14.3
 typing_extensions==4.12.2
+<<<<<<< HEAD
 tzdata==2025.1
+=======
+>>>>>>> 603d98100b0a26dc369f48175e8d73254ee9ebaa
 urllib3==2.3.0
 wcwidth==0.2.13
