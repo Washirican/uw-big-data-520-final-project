@@ -4,6 +4,7 @@ from data_faker import get_registered_user
 from time import sleep
 import os
 from random import randint
+from random import randint
 
 def json_serializer(data):
     return json.dumps(data).encode('utf-8')
