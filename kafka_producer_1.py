@@ -3,6 +3,7 @@ import json
 from data_faker import get_registered_user
 from time import sleep
 import os
+from random import randint
 
 def json_serializer(data):
     return json.dumps(data).encode('utf-8')
@@ -40,20 +41,16 @@ def read_json_file(file_path: str) -> dict:
 
 
 if __name__ == "__main__":
+    # TODO (2025-03-23): Make a single script stream data from multiple games. Or create multiple streaming scripts.
     topic_name = 'danrod'
-    # message = {'key': 'value'}
-    # send_message(topic_name, message)
-    # print(f"Message sent to topic {topic_name}")
-    pbp_file_path = './game-play-by-play-data/game_play_by_play_data_0022401014.json'
+
+    pbp_file_path = './play-by-play-data/play_by_play_data_0022401014.json'
 
     pbp_data = read_json_file(pbp_file_path)
 
     for id, action in enumerate(pbp_data):
         print(action)
 
-    # while 1==1:
-        # user = get_registered_user()
         send_message(topic_name, action)
         print(f"Message sent to topic {topic_name}")
-        # TODO (2025-03-22): Set random sleep time.
-        sleep(2)
+        sleep(randint(1, 5))
