@@ -18,7 +18,7 @@ HEADERS = {
         'Cache-Control': 'no-cache',
         }
 
-
+# TODO (2025-03-23): Package all game details (home team, away team, game date, team records, etc.) into a single dictionary.
 # TODO (2025-03-22): Fix code to get game list by date
 
 def get_nba_games_by_date(date):

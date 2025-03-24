@@ -1,6 +1,5 @@
 from kafka import KafkaProducer
 import json
-from tutorial_data_faker import get_registered_user
 from time import sleep
 from random import randint
 from my_secrets import sasl_plain_password
@@ -17,6 +16,7 @@ producer = KafkaProducer(
     sasl_plain_password=sasl_plain_password
 
 )
+
 
 def send_message(topic, message):
     producer.send(topic, message)

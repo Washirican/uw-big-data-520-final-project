@@ -1,8 +1,6 @@
 from kafka import KafkaProducer
 import json
-from tutorial_data_faker import get_registered_user
 from time import sleep
-import os
 from random import randint
 from my_secrets import sasl_plain_password
 
@@ -17,6 +15,7 @@ producer = KafkaProducer(
     sasl_plain_username='$ConnectionString',
     sasl_plain_password=sasl_plain_password
 )
+
 
 def send_message(topic, message):
     producer.send(topic, message)
@@ -40,6 +39,7 @@ def read_json_file(file_path: str) -> dict:
 
 if __name__ == "__main__":
     # TODO (2025-03-23): Make a single script stream data from multiple games. Or create multiple streaming scripts.
+    # FIXME (2025-03-23): Make this code rum from terminal.
     topic_name = 'danrod'
 
     pbp_file_path = './play-by-play-data/play_by_play_data_0022401014.json'
