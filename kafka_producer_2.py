@@ -1,9 +1,9 @@
 from kafka import KafkaProducer
 import json
-from data_faker import get_registered_user
+from tutorial_data_faker import get_registered_user
 from time import sleep
-import os
 from random import randint
+from my_secrets import sasl_plain_password
 
 def json_serializer(data):
     return json.dumps(data).encode('utf-8')
@@ -14,9 +14,7 @@ producer = KafkaProducer(
     security_protocol='SASL_SSL',
     sasl_mechanism='PLAIN',
     sasl_plain_username='$ConnectionString',
-
-    # FIXME (2025-03-22): How to get environment variable value?
-    sasl_plain_password=os.getenv('AZURE_EVENT_HUBS_SASL_PLAIN_PASSWORD')
+    sasl_plain_password=sasl_plain_password
 
 )
 
