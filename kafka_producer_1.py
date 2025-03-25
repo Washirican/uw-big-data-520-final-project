@@ -51,4 +51,4 @@ if __name__ == "__main__":
         send_message(topic_name, action)
         print(f"Message sent to topic {topic_name}")
         # sleep(randint(1, 5))
-        sleep(0.5)
+        sleep(0.1)
