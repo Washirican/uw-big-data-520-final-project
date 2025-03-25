@@ -1,10 +1,38 @@
-from kafka import KafkaProducer
+"""
+kafka_producer_1.py
+This module provides functionality for producing and sending messages to a Kafka topic.
+It includes a Kafka producer configuration, message serialization, and utility functions
+for reading JSON files and sending messages to a Kafka topic.
+Modules:
+    - kafka: KafkaProducer for producing messages to Kafka.
+    - json: For JSON serialization and deserialization.
+    - time: For introducing delays between message sends.
+    - random: For generating random delays.
+    - my_secrets: For securely importing sensitive credentials.
+Functions:
+    - json_serializer(data): Serializes a Python object into a JSON-formatted byte string.
+    - send_message(topic, message): Sends a message to the specified Kafka topic.
+    - read_json_file(file_path): Reads a JSON file and returns its contents as a dictionary.
+Usage:
+    This script can be executed directly to read play-by-play data from a JSON file and
+    send it to a specified Kafka topic. The producer is configured to use SASL_SSL for
+    secure communication with the Kafka broker.
+"""
 import json
 from time import sleep
-from random import randint
+from kafka import KafkaProducer
 from my_secrets import sasl_plain_password
 
 def json_serializer(data):
+    """
+    Serializes a Python object into a JSON-formatted byte string.
+
+    Args:
+        data (any): The Python object to be serialized.
+
+    Returns:
+        bytes: The JSON-encoded representation of the input data as a UTF-8 byte string.
+    """
     return json.dumps(data).encode('utf-8')
 
 producer = KafkaProducer(
@@ -14,10 +42,21 @@ producer = KafkaProducer(
     sasl_mechanism='PLAIN',
     sasl_plain_username='$ConnectionString',
     sasl_plain_password=sasl_plain_password
+
 )
 
 
 def send_message(topic, message):
+    """
+    Sends a message to the specified Kafka topic.
+
+    Args:
+        topic (str): The name of the Kafka topic to which the message will be sent.
+        message (str): The message to be sent to the Kafka topic.
+
+    Returns:
+        None
+    """
     producer.send(topic, message)
     producer.flush()
 
@@ -38,7 +77,6 @@ def read_json_file(file_path: str) -> dict:
 
 
 if __name__ == "__main__":
-    # TODO (2025-03-23): Make a single script stream data from multiple games. Or create multiple streaming scripts.
     topic_name = 'danrod'
 
     pbp_file_path = './play-by-play-data/play_by_play_data_0022401014.json'
