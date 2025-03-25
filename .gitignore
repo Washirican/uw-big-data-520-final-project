@@ -176,3 +176,4 @@ cython_debug/
 # Data Folders
 /box-score-data/
 /play-by-play-data/
+/active_player_list/
