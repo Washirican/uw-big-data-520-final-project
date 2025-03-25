@@ -39,7 +39,7 @@ def read_json_file(file_path: str) -> dict:
 
 if __name__ == "__main__":
     # TODO (2025-03-23): Make a single script stream data from multiple games. Or create multiple streaming scripts.
-    # FIXME (2025-03-23): Make this code rum from terminal.
+    # FIXME (2025-03-23): Make this code run from terminal.
     topic_name = 'danrod'
 
     pbp_file_path = './play-by-play-data/play_by_play_data_0022401014.json'
@@ -51,4 +51,5 @@ if __name__ == "__main__":
 
         send_message(topic_name, action)
         print(f"Message sent to topic {topic_name}")
-        sleep(randint(1, 5))
+        # sleep(randint(1, 5))
+        sleep(0.5)
