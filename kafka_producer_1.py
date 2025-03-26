@@ -79,14 +79,19 @@ def read_json_file(file_path: str) -> dict:
 if __name__ == "__main__":
     topic_name = 'danrod'
 
-    pbp_file_path = './play-by-play-data/play_by_play_data_0022401014.json'
 
-    pbp_data = read_json_file(pbp_file_path)
+    # FIXME (2025-03-25): Make this code walk the directory and send all files to the topic
+    for id in range(14, 24):
+        print(id)
 
-    for id, action in enumerate(pbp_data):
-        print(action)
+        pbp_file_path = f'./play-by-play-data/play_by_play_data_00224010{id}.json'
 
-        send_message(topic_name, action)
-        print(f"Message sent to topic {topic_name}")
-        # sleep(randint(1, 5))
-        sleep(0.1)
+        pbp_data = read_json_file(pbp_file_path)
+
+        for id, action in enumerate(pbp_data):
+            print(action)
+
+            send_message(topic_name, action)
+            print(f"Message sent to topic {topic_name}")
+            # sleep(randint(1, 5))
+            sleep(0.1)
