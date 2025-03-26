@@ -22,6 +22,7 @@ import json
 from time import sleep
 from kafka import KafkaProducer
 from my_secrets import sasl_plain_password
+from game_ids import GAME_IDs
 
 def json_serializer(data):
     """
@@ -77,18 +78,16 @@ def read_json_file(file_path: str) -> dict:
 
 
 if __name__ == "__main__":
-    topic_name = 'danrod'
+    topic_name = "danrod"
 
+    for game_id in GAME_IDs:
+        print(game_id)
 
-    # FIXME (2025-03-25): Make this code walk the directory and send all files to the topic
-    for id in range(14, 24):
-        print(id)
-
-        pbp_file_path = f'./play-by-play-data/play_by_play_data_00224010{id}.json'
+        pbp_file_path = f'./play-by-play-data/play_by_play_data_{game_id}.json'
 
         pbp_data = read_json_file(pbp_file_path)
 
-        for id, action in enumerate(pbp_data):
+        for idx, action in enumerate(pbp_data):
             print(action)
 
             send_message(topic_name, action)
