@@ -64,7 +64,7 @@ def main():
 
         if data:
             save_data_to_file(data, f"./play-by-play-data/play_by_play_data_{game_id}.json")
-            print("Data saved successfully.")
+            print(f"Data for game_id {game_id} saved successfully.")
         else:
             print("No data to save.")
 

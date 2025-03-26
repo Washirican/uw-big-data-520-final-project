@@ -69,7 +69,7 @@ def main():
 
         if data:
             save_data_to_file(data, f"./box-score-data/box_score_data_{game_id}.json")
-            print("Data saved successfully.")
+            print(f"Data for game_id {game_id} saved successfully.")
         else:
             print("No data to save.")
 
