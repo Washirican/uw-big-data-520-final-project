@@ -1,22 +1,24 @@
 """
-kafka_producer_1.py
-This module provides functionality for producing and sending messages to a Kafka topic.
-It includes a Kafka producer configuration, message serialization, and utility functions
-for reading JSON files and sending messages to a Kafka topic.
-Modules:
-    - kafka: KafkaProducer for producing messages to Kafka.
-    - json: For JSON serialization and deserialization.
-    - time: For introducing delays between message sends.
-    - random: For generating random delays.
-    - my_secrets: For securely importing sensitive credentials.
-Functions:
-    - json_serializer(data): Serializes a Python object into a JSON-formatted byte string.
-    - send_message(topic, message): Sends a message to the specified Kafka topic.
-    - read_json_file(file_path): Reads a JSON file and returns its contents as a dictionary.
+This module is a Kafka producer script designed to send JSON-serialized messages
+to a specified Kafka topic. It reads play-by-play data from JSON files, processes
+the data, and sends it to a Kafka topic for further consumption.
+The script includes the following functionalities:
+- Serialization of Python objects into JSON-formatted byte strings.
+- Configuration of a Kafka producer with SASL_SSL security protocol.
+- Sending messages to a Kafka topic.
+- Reading and parsing JSON files containing game actions.
 Usage:
-    This script can be executed directly to read play-by-play data from a JSON file and
-    send it to a specified Kafka topic. The producer is configured to use SASL_SSL for
-    secure communication with the Kafka broker.
+- Update the `GAME_IDs` list in the `game_ids` module with the desired game IDs.
+- Ensure the play-by-play JSON files are available in the specified directory.
+- Run the script to send the data to the Kafka topic.
+Dependencies:
+- kafka-python: A library for working with Apache Kafka.
+- my_secrets: A module containing sensitive information like the SASL password.
+- game_ids: A module containing a list of game IDs to process.
+Note:
+- Replace the placeholder Kafka server and topic names with actual values.
+- Ensure proper security measures are in place to protect sensitive information.
+
 """
 import json
 from time import sleep
@@ -47,13 +49,13 @@ producer = KafkaProducer(
 )
 
 
-def send_message(topic, message):
+def send_message(topic: str, message: dict) -> None:
     """
     Sends a message to the specified Kafka topic.
 
     Args:
         topic (str): The name of the Kafka topic to which the message will be sent.
-        message (str): The message to be sent to the Kafka topic.
+        message (dict): The message to be sent to the Kafka topic.
 
     Returns:
         None
@@ -72,25 +74,32 @@ def read_json_file(file_path: str) -> dict:
     Returns:
         dict: The contents of the JSON file.
     """
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding="utf-8") as file:
         data = json.load(file)
     return data['game']['actions']
 
 
 if __name__ == "__main__":
-    topic_name = "danrod"
+    TOPIC_NAME = "danrod"
 
     for game_id in GAME_IDs:
         print(game_id)
 
-        pbp_file_path = f'./play-by-play-data/play_by_play_data_{game_id}.json'
+        PBP_FILE_PATH = f'./play-by-play-data/play_by_play_data_{game_id}.json'
 
-        pbp_data = read_json_file(pbp_file_path)
-
+        pbp_data = read_json_file(PBP_FILE_PATH)
+        # k = 0
         for idx, action in enumerate(pbp_data):
             print(action)
 
-            send_message(topic_name, action)
-            print(f"Message sent to topic {topic_name}")
+            send_message(TOPIC_NAME, action)
+            # k += 1
+            # message = {'key': k, 'value': action}
+            # producer.send(TOPIC_NAME, message)
+
+
+            print(f"Data for game_id {game_id} sent to topic {TOPIC_NAME}.")
+
             # sleep(randint(1, 5))
-            sleep(0.1)
+            # sleep(0.1)
+
