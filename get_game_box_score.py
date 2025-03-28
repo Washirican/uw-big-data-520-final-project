@@ -43,7 +43,7 @@ def save_data_to_file(data, filename):
     Returns:
         None
     """
-    with open(filename, 'w') as f:
+    with open(filename, 'w', encoding="utf-8") as f:
         json.dump(data, f, indent=4)
 
 
