@@ -21,10 +21,13 @@ Note:
 
 """
 import json
-from time import sleep
+
+# from time import sleep
 from kafka import KafkaProducer
-from my_secrets import sasl_plain_password
+
 from game_ids import GAME_IDs
+from my_secrets import sasl_plain_password
+
 
 def json_serializer(data):
     """
@@ -82,7 +85,7 @@ def read_json_file(file_path: str) -> dict:
 if __name__ == "__main__":
     TOPIC_NAME = "danrod"
 
-    for game_id in GAME_IDs:
+    for game_id in GAME_IDs: # [:5] [5:]
         print(game_id)
 
         PBP_FILE_PATH = f'./play-by-play-data/play_by_play_data_{game_id}.json'

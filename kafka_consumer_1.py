@@ -1,7 +1,25 @@
-from kafka import KafkaConsumer
-from my_secrets import sasl_plain_password
+"""
+Kafka Consumer Module
+This module provides functionality to consume messages from a Kafka topic
+using the `KafkaConsumer` class from the `kafka-python` library. It includes
+a custom JSON deserializer for processing message payloads.
+Functions:
+    json_deserializer(data): Deserializes a JSON-formatted byte string into
+    a Python object.
+Usage:
+    This module is designed to connect to a Kafka broker, authenticate using
+    SASL/PLAIN, and consume messages from a specified topic.
+Dependencies:
+    - kafka-python
+    - my_secrets (for sensitive credentials)
+    - json
+"""
+
 import json
 
+from kafka import KafkaConsumer
+
+from my_secrets import sasl_plain_password
 
 
 def json_deserializer(data):

@@ -17,6 +17,8 @@ jupyter_client==8.6.3
 jupyter_core==5.7.2
 kafka-python==2.1.2
 matplotlib-inline==0.1.7
+mypy==1.15.0
+mypy-extensions==1.0.0
 nest-asyncio==1.6.0
 packaging==24.2
 parso==0.8.4
