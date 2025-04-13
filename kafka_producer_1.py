@@ -47,7 +47,8 @@ producer = KafkaProducer(
     security_protocol='SASL_SSL',
     sasl_mechanism='PLAIN',
     sasl_plain_username='$ConnectionString',
-    sasl_plain_password=sasl_plain_password
+    sasl_plain_password=sasl_plain_password,
+    api_version=(0, 10, 1)
 
 )
 
