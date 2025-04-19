@@ -36,7 +36,7 @@ def json_deserializer(data):
 
 # Define Kafka consumer
 consumer = KafkaConsumer(
-    "danrod",  # Replace with your topic name
+    "danrod",
     bootstrap_servers=['bigdata520-alt.servicebus.windows.net:9093'],
     auto_offset_reset='earliest',
     enable_auto_commit=True,

@@ -13,5 +13,5 @@
 #     "0022401044",
 # ]
 
-
+# Gety all 2024-2025 regular season game IDs from 22400061 to 22401201
 GAME_IDs = [f"{i:010}" for i in range(22400061, 22401201)]

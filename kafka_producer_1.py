@@ -86,7 +86,7 @@ def read_json_file(file_path: str) -> dict:
 if __name__ == "__main__":
     TOPIC_NAME = "danrod"
 
-    for game_id in GAME_IDs: # First five games: [:5], rest of games [5:]
+    for game_id in GAME_IDs[:5]: # First five games: [:5], rest of games [5:]
         print(game_id)
 
         PBP_FILE_PATH = f'./play-by-play-data/play_by_play_data_{game_id}.json'
